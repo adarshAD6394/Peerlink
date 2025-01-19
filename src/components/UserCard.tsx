@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface userdetails{
     id: number;
@@ -11,24 +11,30 @@ interface user{
     user: userdetails;
 }
 
-const UserCard: React.FC<user> = ({user, }) => {    
+const UserCard: React.FC<user> = ({user, }) => { 
     return(
-        <div className="userCard">
-            <img
-             src={user.avatar}
-             alt={`${user.name}'s avatar`} 
-             className="user-avatar"
-            />
-            <div className="user-info">
-                <div className="info">
-                    <h3 className="userName ">{user.name}</h3>
-                    <h5 className="lastSeen">{user.lastSeen}</h5>
+        <div className="userCard flex flex-row p-2 bg-userCard rounded-xl w-30">
+            <div>
+                <img
+                src={user.avatar}
+                alt={`${user.name}'s avatar`} 
+                className="user-avatar w-16 h-16 rounded-xl "
+                />
+            </div>
+            <div>
+                <div className="user-info flex flex-row justify-between">
+                    <div className="info">
+                        <h3 className="userName px-3.5 font-bold text-userCardText1">{user.name}</h3>
+                    </div>
+                    <div>
+                        <h5 className="lastSeen font-light text-userCardText2">{user.lastSeen}</h5>
+                    </div>
                 </div>
                 <div className="lastText">
-                    <h3 className="text">{user.lastText}</h3>
+                    <h3 className="text px-3.5 font-light text-userCardText2">{user.lastText}</h3>
                 </div>
-
             </div>
+           
         </div>
     )
 }
