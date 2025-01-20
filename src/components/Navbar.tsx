@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
     }
     
     return (
-        <nav className='p-2 fixed h-full bg-zinc-900 flex flex-col'>
+        <nav className='p-2 fixed h-full bg-navBg flex flex-col'>
             <div className='logo p-1'>
                 <img src="src\assets\messenger.png" alt="logo" className='w-14' />
             </div>
@@ -52,10 +52,10 @@ const Navbar: React.FC = () => {
                     <ul className=' py-3 space-y-5'>
                         {categories.map((category) => 
                             <li key={category.name} >
-                                <div className='bg-zinc-900 p-2 rounded-lg hover:bg-zinc-600'>
-                                    <a href={category.href} className='hover:text-zinc-100 items-center'>
-                                        {getIcon(category.icons)}
-                                        <h6 className='text-xs text-zinc-400'>{category.name}</h6>
+                                <div className='bg-zinc-900 p-2 rounded-lg hover:bg-navIconHover flex  justify-center'>
+                                    <a href={category.href} className='hover:navTextHover'>
+                                        <span className='hover:text-navTextHover'> {getIcon(category.icons)}</span>
+                                        <h6 className='text-xs text-navText hover:navTextHover'>{category.name}</h6>
                                     </a>    
                                 </div>  
                             </li>
@@ -65,10 +65,10 @@ const Navbar: React.FC = () => {
                 {/* <div className='sepetaor'>
                     <h4 className='text-zinc-400'>_____</h4>
                 </div> */}
-                <div className='UserSection space-y-3'>
-                    <div className='userProfile' >
+                <div className='UserSection space-y-3 flex flex-col justify-center'>
+                    <div className='userProfile ' >
                         <ul className='py-3 p-2'>
-                            <a href="#Profile" className='items-center'>
+                            <a href="#Profile" className='items-center '>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#a1a1aa" className="size-8">
                                     <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
                                 </svg>

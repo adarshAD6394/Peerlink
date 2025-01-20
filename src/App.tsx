@@ -1,27 +1,26 @@
 import {} from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
-import UserCard from './components/UserCard'
+import ChatList from './pages/ChatList'
+import ChatSection from './pages/ChatSection'
 
 function App() {
-  const user = {
-    id: 1,
-    avatar: "https://example.com/avatar.jpg",
-    name: "John Doe",
-    lastSeen: "2 minutes ago",
-    lastText: "Hello, how are you?"
-  };
   return (
     
-      <div className='flex flex-row'>
+      <div className='flex flex-row h-screen'>
         <div className='flex-none w-20'>
           <Navbar></Navbar>
         </div>
-        <div className='m-2 flex-auto w-54'>
-          <UserCard user={user}></UserCard>
+        <div className='m-2 flex flex-auto flex-row bg-userCard rounded-xl'>
+          <div>
+            <ChatList></ChatList>
+          </div>
+          <div className='m-2 flex-auto'>
+              <ChatSection></ChatSection>
+          </div>
         </div>
-        <div className='m-2 flex-init w-26'>
-            <h2> Group Info</h2>
+        <div className='mr-2 my-2 pr-2 flex-init w-80 bg-userCard rounded-xl'>
+            <h2 className=' font-bold text-xl text-userCardText1 m-2'> Group Info</h2>
         </div>
       </div>
   
