@@ -3,6 +3,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import ChatList from './pages/ChatList'
 import ChatSection from './pages/ChatSection'
+import GroupInfo from './components/GroupInfo'
+import Members from './components/Members'
 
 function App() {
   return (
@@ -19,9 +21,17 @@ function App() {
               <ChatSection></ChatSection>
           </div>
         </div>
-        <div className='mr-2 my-2 pr-2 flex-init w-80 bg-userCard rounded-xl'>
-            <h2 className=' font-bold text-xl text-userCardText1 m-2'> Group Info</h2>
+        <div>
+          <div className='mr-3 my-2 pr-2 flex flex-col flex-init w-60 bg-userCard rounded-xl h-fit'>
+              <GroupInfo></GroupInfo>
+          </div>
+          <div className='mr-3 my-2 pr-2 flex flex-col flex-init w-60 bg-userCard rounded-xl h-fit'>
+            <Members></Members>
+          </div>
         </div>
+        {/* <div>
+          <UserVideo></UserVideo>
+        </div> */}
       </div>
   
   )

@@ -22,7 +22,7 @@ const UserCard: React.FC<user> = ({user, }) => {
                 />
             </div>
             <div className="flex flex-col justify-center">
-                <div className="user-info flex flex-row justify-between">
+                <div className="user-info flex flex-row justify-between w-60">
                     <div className="info">
                         <h3 className="userName px-3.5 font-bold text-userCardText1">{user.name}</h3>
                     </div>
